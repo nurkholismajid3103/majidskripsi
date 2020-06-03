@@ -8,6 +8,7 @@ class category_m extends CI_model {
 		$this->db->select('*');
 		$this->db->from('category');
 		$this->db->where('id_category', $post['id_category']);
+		
 		$query = $this->db->get();
 		return $query;
 	}

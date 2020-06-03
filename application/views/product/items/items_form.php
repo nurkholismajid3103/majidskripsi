@@ -38,7 +38,7 @@
                 </div>
                 <div class="form-group">
                   <label>Category </label>
-                  <select name="category" class="form-control">
+                  <select name="id_category" class="form-control">
                     <option value="">-- Pilih --</option>
                     <?php foreach($category->result() as $key => $data) { ?>
                       <option value="<?php echo $data->id_category?>" <?php echo $data->id_category == $row->id_category ? "selected" : null ?>> <?php echo $data->nama_product?></option>

@@ -41,7 +41,7 @@
                   <td><?php echo $no++?>.</td>
                   <td><?php echo $data->kode_brg?></td>
                   <td><?php echo $data->nama_brg?></td>
-                  <td><?php echo $data->id_category?></td>
+                  <td><?php echo $data->nama_product?></td>
                   <td><?php echo $data->stok?></td>
                   <td><?php echo $data->harga?></td>
                   <td><?php echo $data->barcode?></td>

@@ -9,8 +9,17 @@ class items_m extends CI_model {
 		if($id != null) {
 			$this->db->where('id_items', $id);
 		}
+		$this->db->join('category', 'category.id_category=items.id_category','left');
 		$query = $this->db->get();
 		return $query;
+	}
+	public function ambil_data($tabel)
+	{
+		$this->db->from($tabel);
+		
+		
+		$query = $this->db->get();
+		return $query->result_array();
 	}
 
 	public function add($post)

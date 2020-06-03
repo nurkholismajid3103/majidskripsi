@@ -14,6 +14,7 @@ class items extends CI_Controller {
 	public function index()
 	{
 		$data['row'] = $this->items_m->get();
+		
 		$this->template->load('template', 'product/items/items_data', $data);
 		
 	}
