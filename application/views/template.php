@@ -219,7 +219,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i>Laporan Barang Tempo</a></li>
+            <li><a href="<?php echo site_url('laporan/items')?>"><i class="fa fa-circle-o"></i>Laporan Barang</a></li>
             <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i>Laporan Barang Roche</a></li>
             <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i>Laporan Barang Nutricia</a></li>
             <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i>Laporan Barang Boeringher</a></li>

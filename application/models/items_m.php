@@ -13,13 +13,41 @@ class items_m extends CI_model {
 		$query = $this->db->get();
 		return $query;
 	}
-	public function ambil_data($tabel)
+	public function ambil_data_category()
 	{
-		$this->db->from($tabel);
+		$this->db->from('category');
 		
 		
 		$query = $this->db->get();
 		return $query->result_array();
+	}
+
+	public function getcategory($category)
+	{
+		$kondisi = "";
+        $this->db->select('');
+        $this->db->from('items');
+		$this->db->join('category', 'category.id_category=items.id_category','left');
+        $this->db->where('items.id_category',$category);
+        $q = $this->db->get_where();
+        $q = $q->result_array();
+        //echo $this->db->last_query();
+        //print_r($q);
+        return $q;
+	}
+
+	public function getitemsall()
+	{
+		$kondisi = "";
+        $this->db->select('');
+        $this->db->from('items');
+		$this->db->join('category', 'category.id_category=items.id_category','left');
+		$this->db->order_by('kode_brg', 'ASC');
+        $q = $this->db->get();
+        $q = $q->result_array();
+        //echo $this->db->last_query();
+        //print_r($q);
+        return $q;
 	}
 
 	public function add($post)
