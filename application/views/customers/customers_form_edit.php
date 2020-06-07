@@ -27,6 +27,7 @@
               <form action="" method="post">
                 <div class="form-grop <?php echo form_error('kode_plg') ? 'has-error' : null?>">
                   <label>Kode Pelanggan *</label>
+                  <input type="hidden" name="id_plg" value="<?php echo $row->id_plg?>">
                   <input type="text" name="kode_plg" value="<?php echo $this->input->post('kode_plg')? $this->input->post('kode_plg') : $row->kode_plg?>" class="form-control">
                   <?php echo form_error('kode_plg')?>
                 </div>

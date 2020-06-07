@@ -27,7 +27,6 @@
                   <th>#</th>
                   <th>No FTTBR</th>
                   <th>Nama Pelanggan</th>
-                  <th>Nama Salesman</th>
                   <th>Kode Barang</th>
                   <th>Nama Barang</th>
                   <th>No Batch</th>
@@ -42,8 +41,7 @@
               <tr>
                   <td><?php echo $no++?>.</td>
                   <td><?php echo $data->no_fttbr?></td>
-                  <td><?php echo $data->nama_plg?></td>
-                  <td><?php echo $data->nama_sales?></td>
+                  <td><?php echo $data->Nama_plg?></td>
                   <td><?php echo $data->kode_brg?></td>
                   <td><?php echo $data->nama_brg?></td>
                   <td><?php echo $data->no_batch?></td>

@@ -24,6 +24,7 @@
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
+                  <th>#</th>
                   <th>Kode Pelanggan</th>
                   <th>Nama Pelanggan</th>
                   <th>Alamat</th>
@@ -38,6 +39,7 @@
               <?php $no = 1;
               foreach ($row->result() as $key => $data) { ?>
               <tr>
+                  <td><?php echo $no++?>.</td>
                   <td><?php echo $data->kode_plg?></td>
                   <td><?php echo $data->Nama_plg?></td>
                   <td><?php echo $data->alamat?></td>
@@ -47,10 +49,10 @@
                   <td><?php echo $data->jenis_plg?></td>
                   <td class="text-center" width="160px">
                     <form action="<?php echo site_url('customers/hapus')?>" method="post">
-                    <a href="<?php echo site_url('customers/edit/'.$data->kode_plg)?>" class="btn btn-primary btn-xs">
+                    <a href="<?php echo site_url('customers/edit/'.$data->id_plg)?>" class="btn btn-primary btn-xs">
                         <i class="fa fa-pencil"></i> Update
                     </a>
-                        <input type="hidden" name="kode_plg" value="<?php echo $data->kode_plg?>">
+                        <input type="hidden" name="kode_plg" value="<?php echo $data->id_plg?>">
                         <button onclick="return confirm('Apakah Anda Yakin Menghapus ?')" class="btn btn-danger btn-xs">
                           <i class="fa fa-trash"></i> Delete
                         </button>

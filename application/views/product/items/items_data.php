@@ -27,7 +27,7 @@
                   <th>#</th>
                   <th>Kode Barang</th>
                   <th>Nama Barang</th>
-                  <th>ID Category</th>
+                  <th>Category</th>
                   <th>Stok Barang</th>
                   <th>Harga Barang</th>
                   <th>Barcode</th>

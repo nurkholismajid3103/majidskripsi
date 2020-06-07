@@ -31,15 +31,14 @@
                   <input type="text" name="no_fttbr" value="<?php echo $row->no_fttbr?>" class="form-control">
                   <?php echo form_error('no_fttbr')?>
                 </div>
-                <div class="form-group <?php echo form_error('nama_plg') ? 'has-error' : null?>">
-                  <label>Nama Pelanggan *</label>
-                  <input type="text" name="nama_plg" value="<?php echo $row->nama_plg?>" class="form-control">
-                  <?php echo form_error('nama_plg')?>
-                </div>
-                <div class="form-group <?php echo form_error('nama_sales') ? 'has-error' : null?>">
-                  <label>Nama Salesman *</label>
-                  <input type="text" name="nama_sales" value="<?php echo $row->nama_sales?>" class="form-control">
-                  <?php echo form_error('nama_sales')?>
+                <div class="form-group">
+                  <label>Nama Pelanggan </label>
+                  <select name="id_plg" class="form-control">
+                    <option value="">-- Pilih --</option>
+                    <?php foreach($customers->result() as $key => $data) { ?>
+                      <option value="<?php echo $data->id_plg?>" <?php echo $data->id_plg == $row->id_plg ? "selected" : null ?>> <?php echo $data->Nama_plg?></option>
+                    <?php } ?>
+                  </select>
                 </div>
                 <div class="form-group <?php echo form_error('kode_brg') ? 'has-error' : null?>">
                   <label>Kode Barang *</label>

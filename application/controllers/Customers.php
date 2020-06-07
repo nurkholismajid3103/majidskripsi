@@ -75,7 +75,7 @@ class Customers extends CI_Controller {
 
 	public function hapus()
 	{
-		$id = $this->input->post('kode_plg');
+		$id = $this->input->post('id_plg');
 		$this->customers_m->hapus($id);
 		if($this->db->affected_rows() > 0) {
 			echo "<script>alert('Data Berhasil dihapus');</script>";

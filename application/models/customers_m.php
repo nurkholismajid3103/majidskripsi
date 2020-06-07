@@ -5,9 +5,9 @@ class customers_m extends CI_model {
 
 	public function get($id = null)
 	{
-		$this->db->from('customer');
+		$this->db->from('customers');
 		if($id != null) {
-			$this->db->where('kode_plg', $id);
+			$this->db->where('id_plg', $id);
 		}
 		$query = $this->db->get();
 		return $query;

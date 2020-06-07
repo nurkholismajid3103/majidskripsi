@@ -220,12 +220,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo site_url('laporan/items')?>"><i class="fa fa-circle-o"></i>Laporan Barang</a></li>
-            <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i>Laporan Barang Roche</a></li>
-            <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i>Laporan Barang Nutricia</a></li>
-            <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i>Laporan Barang Boeringher</a></li>
-            <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i>Laporan Barang Kanvas Dalam Kota</a></li>
-            <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i>Laporan Barang Kanvas Luar Kota</a></li>
-            <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i>Laporan Barang Retur</a></li>
+            <li><a href="<?php echo site_url('laporan/retur')?>"><i class="fa fa-circle-o"></i>Laporan Barang Retur</a></li>
             <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i>Laporan Barang Pemusnahan</a></li>
           </ul>
         </li>

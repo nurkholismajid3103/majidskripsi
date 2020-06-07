@@ -8,7 +8,7 @@ class Retur extends CI_Controller {
 		parent::__construct();
 		check_not_login();
 		$this->load->model('retur_m');
-		$this->load->library('form_validation');
+		$this->load->model('customers_m');
 	}
 
 	public function index()
@@ -23,16 +23,19 @@ class Retur extends CI_Controller {
 		$retur = new stdClass();
 		$retur->id_retur = null;
 		$retur->no_fttbr = null;
-		$retur->nama_plg = null;
-		$retur->nama_sales = null;
+		$retur->id_plg = null;
 		$retur->kode_brg = null;
 		$retur->nama_brg = null;
 		$retur->no_batch = null;
 		$retur->exp_date = null;
 		$retur->jumlah = null;
+
+		$customers = $this->customers_m->get();
+
 		$data = array(
 			'page' => 'add',
-			'row' => $retur
+			'row' => $retur,
+			'customers' => $customers,
 		);
 		$this->template->load('template', 'retur/retur_form', $data);
 	}
@@ -42,9 +45,13 @@ class Retur extends CI_Controller {
 		$query = $this->retur_m->get($id);
 		if($query->num_rows() > 0) {
 			$retur = $query->row();
+
+			$customers = $this->customers_m->get();
+
 			$data = array(
 				'page' => 'edit',
-				'row' => $retur
+				'row' => $retur,
+				'customers' => $customers,
 			);
 			$this->template->load('template', 'retur/retur_form', $data);
 		} else {
