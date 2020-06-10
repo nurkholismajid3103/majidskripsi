@@ -42,7 +42,7 @@ class retur_m extends CI_model {
         $this->db->select('');
         $this->db->from('retur');
 		$this->db->join('customers', 'customers.id_plg=retur.id_plg','left');
-        $this->db->order_by('kode_brg', 'ASC');
+        $this->db->order_by('no_fttbr', 'ASC');
         $q = $this->db->get();
         $q = $q->result_array();
         //echo $this->db->last_query();

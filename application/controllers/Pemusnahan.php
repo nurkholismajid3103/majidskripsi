@@ -8,7 +8,7 @@ class pemusnahan extends CI_Controller {
 		parent::__construct();
 		check_not_login();
 		$this->load->model('pemusnahan_m');
-		$this->load->library('form_validation');
+		$this->load->model('retur_m');
 	}
 
 	public function index()
@@ -23,13 +23,16 @@ class pemusnahan extends CI_Controller {
 		$pemusnahan = new stdClass();
 		$pemusnahan->id_pemusnahan = null;
 		$pemusnahan->kode_brg = null;
-		$pemusnahan->nama_brg = null;
+		$pemusnahan->id_retur = null;
 		$pemusnahan->exp_date = null;
 		$pemusnahan->tgl_pemusnahan = null;
 		$pemusnahan->jumlah = null;
+
+		$retur = $this->retur_m->get();
 		$data = array(
 			'page' => 'add',
-			'row' => $pemusnahan
+			'row' => $pemusnahan,
+			'retur' => $retur,
 		);
 		$this->template->load('template', 'pemusnahan/pemusnahan_form', $data);
 	}
@@ -39,10 +42,13 @@ class pemusnahan extends CI_Controller {
 		$query = $this->pemusnahan_m->get($id);
 		if($query->num_rows() > 0) {
 			$pemusnahan = $query->row();
+
+			$retur = $this->retur_m->get();
 			$data = array(
-				'page' => 'edit',
-				'row' => $pemusnahan
-			);
+			'page' => 'add',
+			'row' => $pemusnahan,
+			'retur' => $retur,
+		);
 			$this->template->load('template', 'pemusnahan/pemusnahan_form', $data);
 		} else {
 			echo "<script>alert('Data Tidak ditemukan');";

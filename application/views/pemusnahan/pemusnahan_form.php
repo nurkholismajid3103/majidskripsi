@@ -31,10 +31,14 @@
                   <input type="text" name="kode_brg" value="<?php echo $row->kode_brg?>" class="form-control" required>
                   <?php echo form_error('kode_brg')?>
                 </div>
-                <div class="form-group <?php echo form_error('nama_brg') ? 'has-error' : null?>">
-                  <label>Nama Barang *</label>
-                  <input type="text" name="nama_brg" value="<?php echo $row->nama_brg?>" class="form-control">
-                  <?php echo form_error('nama_brg')?>
+                <div class="form-group">
+                  <label>Nama Barang </label>
+                  <select name="id_retur" class="form-control">
+                    <option value="">-- Pilih --</option>
+                    <?php foreach($retur->result() as $key => $data) { ?>
+                      <option value="<?php echo $data->id_retur?>" <?php echo $data->id_retur == $row->id_retur ? "selected" : null ?>> <?php echo $data->nama_brg?></option>
+                    <?php } ?>
+                  </select>
                 </div>
                 <div class="form-group <?php echo form_error('exp_date') ? 'has-error' : null?>">
                   <label>Expired Date *</label>

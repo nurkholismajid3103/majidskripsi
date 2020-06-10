@@ -27,26 +27,24 @@
     <table class="table table-bordered">
                 <thead>
                     <tr>
-                    <th>#</th>
+                  <th>#</th>
                   <th>Kode Barang</th>
                   <th>Nama Barang</th>
-                  <th>Category</th>
-                  <th>Stok Barang</th>
-                  <th>Harga Barang</th>
-                  <th>Barcode</th>
+                  <th>Expired Date</th>
+                  <th>Tanggal Pemusnahan</th>
+                  <th>Jumlah Barang</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php $no = 1;
                     foreach($p as $x) { ?>
                     <tr>
-                    <td><?php echo $no++?>.</td>
+                  <td><?php echo $no++?>.</td>
                   <td><?php echo $x['kode_brg']?></td>
                   <td><?php echo $x['nama_brg']?></td>
-                  <td><?php echo $x['nama_product']?></td>
-                  <td><?php echo $x['stok']?></td>
-                  <td><?php echo $x['harga']?></td>
-                  <td><?php echo $x['barcode']?></td>
+                  <td><?php echo $x['exp_date']?></td>
+                  <td><?php echo $x['tgl_pemusnahan']?></td>
+                  <td><?php echo $x['jumlah']?></td>
                     </tr>
                     <?php
                     } ?>

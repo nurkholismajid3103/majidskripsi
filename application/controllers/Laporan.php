@@ -9,6 +9,8 @@ class Laporan extends CI_Controller {
 		check_not_login();
         $this->load->model('items_m');
         $this->load->model('retur_m');
+        $this->load->model('pemusnahan_m');
+        $this->load->model('product_principal_m');
 	}
 
     public function items()
@@ -52,6 +54,49 @@ class Laporan extends CI_Controller {
         $data['title']= "Laporan Semua Data Retur";
         $data['p']=$this->retur_m->getreturall();
         $this->load->view('laporan/l_retur_detail', $data);
+    }
+
+    public function pemusnahan()
+    {
+    $data['retur'] =$this->pemusnahan_m->ambil_data_retur();   
+    $this->template->load('template', 'laporan/l_pemusnahan', $data);
+    }
+
+    public function laporanpemusnahan()
+    {
+        $retur=$this->input->post('id_retur');
+        $data['title']= "Laporan Pemusnahan Perbarang";
+        $data['p']=$this->pemusnahan_m->getretur($retur);
+        $this->load->view('laporan/l_pemusnahan_detail', $data);
+    }
+
+    public function laporanpemusnahanall()
+    {
+        $data['title']= "Laporan Semua Data Pemusnahan";
+        $data['p']=$this->pemusnahan_m->getpemusnahanall();
+        $this->load->view('laporan/l_pemusnahan_detail', $data);
+    }
+
+    public function principal()
+    {
+    $data['principal'] =$this->product_principal_m->ambil_data_principal();   
+    $this->template->load('template', 'laporan/l_principal', $data);
+
+    }
+
+    public function laporanproduct_principal()
+    {
+        $principal=$this->input->post('id_principal');
+        $data['title']= "Laporan Product Principal";
+        $data['p']=$this->product_principal_m->getprincipal($principal);
+        $this->load->view('laporan/l_principal_detail', $data);
+    }
+
+    public function laporanproduct_principalall()
+    {
+        $data['title']= "Laporan Semua Data Product Principal";
+        $data['p']=$this->product_principal_m->getprincipalall();
+        $this->load->view('laporan/l_principal_detail', $data);
     }
 
 }

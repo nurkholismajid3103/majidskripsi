@@ -164,15 +164,29 @@
           <a href="<?php echo site_url('dashboard')?>">
             <i class="fa fa-home"></i> <span>Dashboard</span>
           </a>
-          <a href="<?php echo site_url('salesman')?>">
-            <i class="fa fa-user"></i> <span>Sales</span>
-          </a>
+          <?php if($this->fungsi->user_login()->level == 1) { ?>
           <a href="<?php echo site_url('customers')?>">
             <i class="fa fa-users"></i> <span>Customers</span>
           </a>
+          <?php } ?>
+          <?php if($this->fungsi->user_login()->level == 1) { ?>
           <a href="<?php echo site_url('ekspedisi')?>">
             <i class="fa fa-truck"></i> <span>Ekspedisi</span>
           </a>
+          <?php } ?>
+          <li class="treeview"> 
+          <a href="#">
+            <i class="fa fa-archive"></i>
+            <span>Principal</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo site_url('principal')?>"><i class="fa fa-circle-o"></i> Daftar Principal </a></li>
+            <li><a href="<?php echo site_url('product_principal')?>"><i class="fa fa-circle-o"></i> Product Principal </a></li>
+          </ul>
+        </li>
           <li class="treeview">
           <a href="#">
             <i class="fa fa-clock-o"></i>
@@ -199,6 +213,7 @@
             <li><a href="<?php echo site_url('items')?>"><i class="fa fa-circle-o"></i> Item </a></li>
           </ul>
         </li>
+        <?php if($this->fungsi->user_login()->level == 1) { ?>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-gears"></i> <span>Retur</span>
@@ -211,6 +226,8 @@
             <li><a href="<?php echo site_url('pemusnahan')?>"><i class="fa fa-gears"></i>Barang Pemusnahan</a></li>
           </ul>
         </li>
+        <?php } ?>
+        <?php if($this->fungsi->user_login()->level == 1) { ?>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i> <span>Report</span>
@@ -221,9 +238,11 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo site_url('laporan/items')?>"><i class="fa fa-circle-o"></i>Laporan Barang</a></li>
             <li><a href="<?php echo site_url('laporan/retur')?>"><i class="fa fa-circle-o"></i>Laporan Barang Retur</a></li>
-            <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i>Laporan Barang Pemusnahan</a></li>
+            <li><a href="<?php echo site_url('laporan/pemusnahan')?>"><i class="fa fa-circle-o"></i>Laporan Barang Pemusnahan</a></li>
+            <li><a href="<?php echo site_url('laporan/principal')?>"><i class="fa fa-circle-o"></i>Laporan Barang Principal</a></li>
           </ul>
         </li>
+        <?php } ?>
         <?php if($this->fungsi->user_login()->level == 1) { ?>
         <li class="header">Setting</li>
         <li><a href="<?php echo site_url('user')?>"><i class="fa fa-user text-aqua"></i> <span>User</span></a></li>
